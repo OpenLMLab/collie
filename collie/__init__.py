@@ -2,7 +2,7 @@
 '''
 from .config import CollieConfig
 from .models import LlamaForCausalLM, MossForCausalLM, CollieModelForCausalLM, \
-    ChatGLMForCausalLM, InternLMForCausalLM
+    ChatGLMForCausalLM, InternLMForCausalLM, ChatGLM2ForCausalLM, Moss003MoonForCausalLM
 from .callbacks import Callback, HasMonitorCallback, CheckpointCallback, \
     LoadBestModelCallback
 from .module import PipelineGenerationMixin, ColumnParallelLinear, \
@@ -23,7 +23,8 @@ from .module import PipelineGenerationMixin, ColumnParallelLinear, \
 from .controller import Trainer, Evaluator, EvaluatorForPerplexity, \
     EvaluatorForClassfication, EvaluatorForGeneration, Server
 from .config import CollieConfig
-from .metrics import BaseMetric, DecodeMetric, AccuracyMetric, PPLMetric, BleuMetric
+from .metrics import BaseMetric, DecodeMetric, AccuracyMetric, \
+    PPLMetric, BleuMetric, ClassifyFPreRecMetric
 from .data import CollieDatasetForClassification, CollieBatchSampler, \
     CollieDataLoader, CollieDatasetForTraining, CollieDatasetForGeneration
 from .optim import Lomo, Lion, SophiaG, Adan
@@ -46,6 +47,8 @@ __all__ = [
     'CollieModelForCausalLM',
     'ChatGLMForCausalLM',
     'InternLMForCausalLM',
+    'ChatGLM2ForCausalLM',
+    'Moss003MoonForCausalLM'
 
     # modules
     'PipelineGenerationMixin',
@@ -100,6 +103,7 @@ __all__ = [
     'AccuracyMetric', 
     'PPLMetric',
     'BleuMetric',
+    'ClassifyFPreRecMetric',
     
     #data
     'CollieDatasetForClassification', 
